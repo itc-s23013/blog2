@@ -1,9 +1,17 @@
 import Link from 'next/link'
+<<<<<<< HEAD
+=======
+import styles from 'styles/nav.module.css'
+>>>>>>> chapter3
 
 const Nav = () => {
   return (
     <nav>
+<<<<<<< HEAD
       <ul>
+=======
+      <ul className={styles.list}>
+>>>>>>> chapter3
         <li>
           <Link href='/'>
             <span>Home</span>
