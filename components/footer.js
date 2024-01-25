@@ -1,24 +1,18 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-const Footer = () => {
-  return <footer>FOOTER</footer>
-=======
+import Container from 'components/container'
 import Logo from 'components/logo'
+import styles from 'styles/footer.module.css'
 
 const Footer = () => {
-=======
-import Logo from 'components/logo'
-
-const Footer = () => {
->>>>>>> chapter3
   return (
-    <footer>
-      <Logo />
+    <footer className={styles.wrapper}>
+      <Container>
+        <div className={styles.flexContainer}>
+          <Logo />
+          [ソーシャル]
+        </div>
+      </Container>
     </footer>
   )
-<<<<<<< HEAD
->>>>>>> chapter2
-=======
->>>>>>> chapter3
 }
+
 export default Footer
