@@ -1,25 +1,12 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-import Layout from 'components/layout'
+import Container from 'components/container'
 import Hero from 'components/hero'
 
 const Home = () => {
   return (
-    <Layout>
-      <Hero />
-    </Layout>
+    <Container>
+      <Hero title='CUBE' subtitle='アウトプットしていくサイト' imageOn />
+    </Container>
   )
-=======
-import Hero from 'components/hero'
-
-const Home = () => {
-  return <Hero title='CUBE' subtitle='アウトプットしていくサイト' imageOn />
->>>>>>> chapter2
-=======
-import Hero from 'components/hero'
-
-const Home = () => {
-  return <Hero title='About' subtitle='アウトプットしていくサイト' />
->>>>>>> chapter3
 }
+
 export default Home
