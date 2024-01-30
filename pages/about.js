@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Meta from 'components/meta'
 import Container from 'components/container'
 import Hero from 'components/hero'
 import PostBody from 'components/post-body'
@@ -14,9 +14,7 @@ import eyecatch from 'images/about.jpg'
 const About = () => {
   return (
     <Container>
-      <Head>
-        <title>abaut</title>
-      </Head>
+      <Meta pageTitle='アバウト' />
 
       <Hero title='About' subtitle='About development activities' />
 
