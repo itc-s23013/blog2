@@ -15,7 +15,7 @@ const {
 // 活用OGP画像
 import siteImg from 'images/ogp.jpg'
 
-const Meta = ({ pageTitle, pageDesc, pageImg, pageImgW, PageImgH }) => {
+const Meta = ({ pageTitle, pageDesc, pageImg, pageImgW, pageImgH }) => {
   // ページのタイトル
   const title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle
   // ページの説明
