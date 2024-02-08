@@ -15,7 +15,7 @@ import Image from 'next/image'
 import { getPlaiceholder } from 'plaiceholder'
 import { eyecatchLocal } from 'lib/constants'
 
-const Schedule = ({
+const Post = ({
   title,
   publish,
   content,
@@ -44,7 +44,7 @@ const Schedule = ({
             height={eyecatch.height}
             sizes='(min-width: 1152px) 1152px, 100vw'
             priority
-            placeholder="blur"
+            placeholder='blur'
             blurDataURL={eyecatch.blurDataURL}
           />
         </figure>
@@ -62,10 +62,17 @@ const Schedule = ({
     </Container>
   )
 }
-export default Schedule
+export default Post
 
-const getStaticProps = async () => {
-  const slug = 'micro'
+const getStaticPaths = async () => {
+  return {
+    paths: ['/blog/schedule', '/blog/music', '/blog/micro'],
+    fallback: false
+  }
+}
+
+const getStaticProps = async context => {
+  const slug = context.params.slug
 
   const post = await getPostBySlug(slug)
 
@@ -87,4 +94,4 @@ const getStaticProps = async () => {
     }
   }
 }
-export { getStaticProps }
+export { getStaticProps, getStaticPaths }
