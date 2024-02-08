@@ -1,4 +1,4 @@
-import { getPostBySlug } from 'lib/api'
+import { getPostBySlug, getAllSlugs } from 'lib/api'
 import { extractText } from 'lib/extract-text'
 import Meta from 'components/meta'
 import Container from 'components/container'
@@ -65,11 +65,15 @@ const Post = ({
 export default Post
 
 const getStaticPaths = async () => {
+  const allSlugs = await getAllSlugs()
+
   return {
-    paths: ['/blog/schedule', '/blog/music', '/blog/micro'],
+    paths: allSlugs.map(({ slug }) => `/blog/${slug}`),
     fallback: false
   }
 }
+
+export { getStaticPaths }
 
 const getStaticProps = async context => {
   const slug = context.params.slug
@@ -88,10 +92,10 @@ const getStaticProps = async context => {
       title: post.title,
       publish: post.publishDate,
       content: post.content,
-      eyecatch: eyecatch,
+      eyecatch,
       categories: post.categories,
       description
     }
   }
 }
-export { getStaticProps, getStaticPaths }
+export { getStaticProps }
