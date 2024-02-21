@@ -86,7 +86,7 @@
     display: grid;
     gap: 40px;
     place-content: center;
-    text-align: centerl
+    text-align: center;
   }
 }
 
